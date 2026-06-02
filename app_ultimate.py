@@ -1,8 +1,14 @@
+# ========== 环境配置（必须在所有 import 之前） ==========
+# 设置 HuggingFace 国内镜像，解决模型下载超时
+# 注意：IDE 不会自动读取 ~/.zshrc，所以需要在代码里设置
+import os
+os.environ.setdefault("HF_ENDPOINT", "https://hf-mirror.com")
+# ===========================================================
+
 # ==========================
 # 第16天：终极全能AI助手
 # 网页界面 + Chroma本地向量库 + 永久记忆 + Agent智能体
 # ==========================
-import os
 import json
 import datetime
 from flask import Flask, render_template, request, jsonify
